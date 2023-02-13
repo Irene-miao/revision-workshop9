@@ -1,7 +1,7 @@
 package sg.edu.nus.iss;
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class SCP {
   
@@ -12,6 +12,8 @@ public class SCP {
     }
 
     public String checkWinner(Integer playerChoice, Integer computerChoice) {
+       
+       // 0: scissors, 1: paper, 2: stone
         String result = "" ;
 
         if (playerChoice == computerChoice) {
@@ -25,7 +27,14 @@ public class SCP {
                         result = "Computer";
                     }
                     break;
-                 case 2: //stone
+                 case 1: //paper
+                    if (computerChoice == 2) {
+                        result = "Computer";
+                    } else {
+                        result = "Human";
+                    }
+                    break;
+                case 2: //stone
                     if (computerChoice == 0) {
                         result = "Human";
                     } else {
